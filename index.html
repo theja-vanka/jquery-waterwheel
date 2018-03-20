@@ -27,22 +27,6 @@
             }
         });
 
-        $('#prev').bind('click', function() {
-            carousel.prev();
-            return false
-        });
-
-        $('#next').bind('click', function() {
-            carousel.next();
-            return false;
-        });
-
-        $('#reload').bind('click', function() {
-            newOptions = eval("(" + $('#newoptions').val() + ")");
-            carousel.reload(newOptions);
-            return false;
-        });
-
     });
     </script>
     <style type="text/css">
@@ -67,6 +51,11 @@
         background: #FFF;
     }
 
+    #carousel img {
+      display: inline-block;
+      width: 100%;
+    }
+
     #carousel>div.slide>div:last-child {
         position: absolute;
         top: 0;
@@ -74,10 +63,17 @@
         height: inherit;
         display: table;
     }
+    #carousel > div.slide > div:first-child {
+
+    display: table-cell;
+    vertical-align: middle;
+    height: inherit;
+    width: 100%;
+
+}
 
     h2 {
 
-        background-color: #f00;
         display: table-cell;
         vertical-align: middle;
         height: inherit;
@@ -146,9 +142,6 @@
       <img src="images/7.jpg" id="wwcp-7" />
       <img src="images/8.jpg" id="wwcp-8" />
       <img src="images/9.jpg" id="wwcp-9" /-->
-    </div>
-    <a href="#" id="prev">Prev</a> | <a href="#" id="next">Next</a>
-    <br/>
     </div>
 </body>
 
