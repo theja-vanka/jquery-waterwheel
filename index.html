@@ -1,112 +1,155 @@
 <!doctype html>
 <html>
-  <head>
+
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Waterwheel Carousel Demo</title>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="js/jquery.waterwheelCarousel.js"></script>
     <script type="text/javascript">
-      $(document).ready(function () {
+    $(document).ready(function() {
         var carousel = $("#carousel").waterwheelCarousel({
-          flankingItems: 3,
-          movingToCenter: function ($item) {
-            $('#callback-output').prepend('movingToCenter: ' + $item.attr('id') + '<br/>');
-          },
-          movedToCenter: function ($item) {
-            $('#callback-output').prepend('movedToCenter: ' + $item.attr('id') + '<br/>');
-          },
-          movingFromCenter: function ($item) {
-            $('#callback-output').prepend('movingFromCenter: ' + $item.attr('id') + '<br/>');
-          },
-          movedFromCenter: function ($item) {
-            $('#callback-output').prepend('movedFromCenter: ' + $item.attr('id') + '<br/>');
-          },
-          clickedCenter: function ($item) {
-            $('#callback-output').prepend('clickedCenter: ' + $item.attr('id') + '<br/>');
-          }
+            flankingItems: 3,
+            movingToCenter: function($item) {
+                $('#callback-output').prepend('movingToCenter: ' + $item.attr('id') + '<br/>');
+            },
+            movedToCenter: function($item) {
+                $('#callback-output').prepend('movedToCenter: ' + $item.attr('id') + '<br/>');
+            },
+            movingFromCenter: function($item) {
+                $('#callback-output').prepend('movingFromCenter: ' + $item.attr('id') + '<br/>');
+            },
+            movedFromCenter: function($item) {
+                $('#callback-output').prepend('movedFromCenter: ' + $item.attr('id') + '<br/>');
+            },
+            clickedCenter: function($item) {
+                $('#callback-output').prepend('clickedCenter: ' + $item.attr('id') + '<br/>');
+            }
         });
 
-        $('#prev').bind('click', function () {
-          carousel.prev();
-          return false
+        $('#prev').bind('click', function() {
+            carousel.prev();
+            return false
         });
 
-        $('#next').bind('click', function () {
-          carousel.next();
-          return false;
+        $('#next').bind('click', function() {
+            carousel.next();
+            return false;
         });
 
-        $('#reload').bind('click', function () {
-          newOptions = eval("(" + $('#newoptions').val() + ")");
-          carousel.reload(newOptions);
-          return false;
+        $('#reload').bind('click', function() {
+            newOptions = eval("(" + $('#newoptions').val() + ")");
+            carousel.reload(newOptions);
+            return false;
         });
 
-      });
+    });
     </script>
-
     <style type="text/css">
-      body {
-        font-family:Arial;
-        font-size:12px;
-        background:#ededed;
-      }
-      .example-desc {
-        margin:3px 0;
-        padding:5px;
-      }
+    body {
+        font-family: Arial;
+        font-size: 12px;
+        background: #ededed;
+    }
 
-      #carousel {
-        width:960px;
-        border:1px solid #222;
-        height:300px;
-        position:relative;
-        clear:both;
-        overflow:hidden;
-        background:#FFF;
-      }
-      #carousel img {
-        visibility:hidden; /* hide images until carousel can handle them */
-        cursor:pointer; /* otherwise it's not as obvious items can be clicked */
-      }
+    .example-desc {
+        margin: 3px 0;
+        padding: 5px;
+    }
 
-      .split-left {
-        width:450px;
-        float:left;
-      }
-      .split-right {
-        width:400px;
-        float:left;
-        margin-left:10px;
-      }
-      #callback-output {
-        height:250px;
-        overflow:scroll;
-      }
-      textarea#newoptions {
-        width:430px;
-      }
+    #carousel {
+        width: 960px;
+        border: 1px solid #222;
+        height: 300px;
+        position: relative;
+        clear: both;
+        overflow: hidden;
+        background: #FFF;
+    }
+
+    #carousel>div.slide>div:last-child {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: inherit;
+        display: table;
+    }
+
+    h2 {
+
+        background-color: #f00;
+        display: table-cell;
+        vertical-align: middle;
+        height: inherit;
+        width: 100%;
+        text-align: center;
+    }
+
+    .split-left {
+        width: 450px;
+        float: left;
+    }
+
+    .split-right {
+        width: 400px;
+        float: left;
+        margin-left: 10px;
+    }
+
+    #callback-output {
+        height: 250px;
+        overflow: scroll;
+    }
+
+    textarea#newoptions {
+        width: 430px;
+    }
+
+    #carousel>div.slide {
+        display: inline-block;
+        border: 1px solid #ccc;
+        cursor: pointer;
+    }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <h1>Carousel Demo</h1>
     <div id="carousel">
-      <img src="images/1.jpg" id="wwcp-1" />
-      <img src="images/2.jpg" id="wwcp-2" />
-      <img src="images/3.jpg" id="wwcp-3" />
-      <img src="images/4.jpg" id="wwcp-4" />
+        <div class="slide" id="wwcp-1">
+            <div>
+                <img src="images/1.jpg" />
+            </div>
+            <div>
+                <h2>1st div</h2>
+            </div>
+        </div>
+        <div class="slide" id="wwcp-2">
+            <div>
+                <img src="images/2.jpg" />
+            </div>
+            <div>
+                <h2>2nd div</h2>
+            </div>
+        </div>
+        <div class="slide" id="wwcp-3">
+            <div>
+                <img src="images/3.jpg" />
+            </div>
+            <div>
+                <h2><span>3rd div</span></h2>
+            </div>
+        </div>
+        <!--img src="images/4.jpg" id="wwcp-4" />
       <img src="images/5.jpg" id="wwcp-5" />
       <img src="images/6.jpg" id="wwcp-6" />
       <img src="images/7.jpg" id="wwcp-7" />
       <img src="images/8.jpg" id="wwcp-8" />
-      <img src="images/9.jpg" id="wwcp-9" />
+      <img src="images/9.jpg" id="wwcp-9" /-->
     </div>
     <a href="#" id="prev">Prev</a> | <a href="#" id="next">Next</a>
-
     <br/>
-
-
     </div>
+</body>
 
-  </body>
 </html>
