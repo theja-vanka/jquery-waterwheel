@@ -47,7 +47,9 @@
         currentDirection:       'forward',
         leftItemsCount:         0,
         rightItemsCount:        0,
-        performingSetup:        true
+        performingSetup:        true,
+        cox: -1,
+        mcox: 0 
       };
       data.itemsContainer.find('img').removeClass(options.activeClassName);
     }
@@ -493,7 +495,7 @@
       }
       // Do nothing if the carousel is already moving
       if (data.currentlyMoving) {
-        return;
+        data.currentlyMoving = false;
       }
 
       data.previousCenterItem = data.currentCenterItem;
@@ -517,6 +519,28 @@
           rotateCarousel(rotations);
         }
       }
+    });
+
+    $(this).find('img').on("mousedown", function(event){
+      data.mcox = event.pageX;
+    });
+
+    $(this).find('img').on("mousemove", function(event){
+      data.cox = event.pageX;
+    });
+    $(this).find('img').on("dragend", function(event){
+     
+      if(data.mcox < data.cox)
+      {
+        data.currentDirection = 'backward';
+        rotateCarousel(Math.abs(1));
+      }
+      else
+      {
+        data.currentDirection = 'forward';
+        rotateCarousel(Math.abs(1));
+      }
+      data.previousCenterItem = data.currentCenterItem;
     });
 
 
@@ -650,10 +674,10 @@
     sizeMultiplier:             0.7, // determines how drastically the size of each item changes
     opacityMultiplier:          0.8, // determines how drastically the opacity of each item changes
     horizon:                    0,   // how "far in" the horizontal/vertical horizon should be set from the container wall. 0 for auto
-    flankingItems:              3,   // the number of items visible on either side of the center                  
+    flankingItems:              2,   // the number of items visible on either side of the center                  
 
     // animation
-    speed:                      300,      // speed in milliseconds it will take to rotate from one to the next
+    speed:                      500,      // speed in milliseconds it will take to rotate from one to the next
     animationEasing:            'linear', // the easing effect to use when animating
     quickerForFurther:          true,     // set to true to make animations faster when clicking an item that is far away from the center
     edgeFadeEnabled:            false,    // when true, items fade off into nothingness when reaching the edge. false to have them move behind the center image
