@@ -13,6 +13,8 @@
  * http://www.jquery.com
  */
 
+
+
  $(document).ready(function() {
         var ktrv = $(".ktrv").waterwheelCarousel({
             flankingItems: 3,
