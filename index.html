@@ -6,29 +6,6 @@
     <title>Waterwheel Carousel Demo</title>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="js/jquery.waterwheelCarousel.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function() {
-        var ktrv = $(".ktrv").waterwheelCarousel({
-            flankingItems: 3,
-            movingToCenter: function($item) {
-                $('#callback-output').prepend('movingToCenter: ' + $item.attr('id') + '<br/>');
-            },
-            movedToCenter: function($item) {
-                $('#callback-output').prepend('movedToCenter: ' + $item.attr('id') + '<br/>');
-            },
-            movingFromCenter: function($item) {
-                $('#callback-output').prepend('movingFromCenter: ' + $item.attr('id') + '<br/>');
-            },
-            movedFromCenter: function($item) {
-                $('#callback-output').prepend('movedFromCenter: ' + $item.attr('id') + '<br/>');
-            },
-            clickedCenter: function($item) {
-                $('#callback-output').prepend('clickedCenter: ' + $item.attr('id') + '<br/>');
-            }
-        });
-
-    });
-    </script>
     <style type="text/css">
     /*body { font-family: Arial; font-size: 12px; background: #ededed; }*/
 
@@ -42,7 +19,12 @@
         background: #000;
     }
 
-    .ktrv img {
+    .wwkt div {
+        height: 100%;
+        width: 100%;
+        background-color: #fff;
+    }
+    /*    .wwkt img {
       display: inline-block;
       width: 100%;
       height: 100%;
@@ -84,15 +66,14 @@
         text-align: center;
         color:black;
     }
-
-    
+*/
 
     #callback-output {
         height: 250px;
         overflow: scroll;
     }
 
-    
+
 
     .ktrv>div.wwkt {
         display: inline-block;
@@ -105,80 +86,35 @@
     <h1>Carousel Demo</h1>
     <div class="ktrv">
         <div class="wwkt" id="wwcp-1">
-            <div>
-                <img src="images/card.jpg" />
-            </div>
-            <div>
-                <h2>1st div</h2>
-            </div>
-            <div>
-                <img src="images/card.jpg" />
+            <div draggable="true">
             </div>
         </div>
         <div class="wwkt" id="wwcp-2">
-            <div>
-                <img src="images/card.jpg" />
-            </div>
-            <div>
-                <h2>2nd div</h2>
-            </div>
-            <div>
-                <img src="images/card.jpg" />
+            <div draggable="true">
             </div>
         </div>
         <div class="wwkt" id="wwcp-3">
-            <div>
-                <img src="images/card.jpg" />
-            </div>
-            <div>
-                <h2>3rd div</h2>
-            </div>
-            <div>
-                <img src="images/card.jpg" />
+            <div draggable="true">
             </div>
         </div>
         <div class="wwkt" id="wwcp-4">
-            <div>
-                <img src="images/card.jpg" />
-            </div>
-            <div>
-                <h2>4st div</h2>
-            </div>
-            <div>
-                <img src="images/card.jpg" />
+            <div draggable="true">
             </div>
         </div>
-        <div class="wwkt" id="wwcp-5">
-            <div>
-                <img src="images/card.jpg" />
-            </div>
-            <div>
-                <h2>5st div</h2>
-            </div>
-            <div>
-                <img src="images/card.jpg" />
+        <div class="wwkt" id="wwcp-1">
+            <div draggable="true">
             </div>
         </div>
-        <div class="wwkt" id="wwcp-6">
-            <div>
-                <img src="images/card.jpg" />
-            </div>
-            <div>
-                <h2>6st div</h2>
-            </div>
-            <div>
-                <img src="images/card.jpg" />
+        <div class="wwkt" id="wwcp-2">
+            <div draggable="true"> 
             </div>
         </div>
-        <div class="wwkt" id="wwcp-7">
-            <div>
-                <img src="images/card.jpg" />
+        <div class="wwkt" id="wwcp-3">
+            <div draggable="true">
             </div>
-            <div>
-                <h2>7st div</h2>
-            </div>
-            <div>
-                <img src="images/card.jpg" />
+        </div>
+        <div class="wwkt" id="wwcp-4">
+            <div draggable="true">
             </div>
         </div>
         <!--img src="images/4.jpg" id="wwcp-4" />
@@ -191,3 +127,7 @@
 </body>
 
 </html>
+
+
+<a href="{{data.url}}">
+     </a>

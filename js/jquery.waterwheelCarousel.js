@@ -12,6 +12,29 @@
  * for use with the jQuery JavaScript Framework
  * http://www.jquery.com
  */
+
+ $(document).ready(function() {
+        var ktrv = $(".ktrv").waterwheelCarousel({
+            flankingItems: 3,
+            movingToCenter: function($item) {
+                $('#callback-output').prepend('movingToCenter: ' + $item.attr('id') + '<br/>');
+            },
+            movedToCenter: function($item) {
+                $('#callback-output').prepend('movedToCenter: ' + $item.attr('id') + '<br/>');
+            },
+            movingFromCenter: function($item) {
+                $('#callback-output').prepend('movingFromCenter: ' + $item.attr('id') + '<br/>');
+            },
+            movedFromCenter: function($item) {
+                $('#callback-output').prepend('movedFromCenter: ' + $item.attr('id') + '<br/>');
+            },
+            clickedCenter: function($item) {
+                $('#callback-output').prepend('clickedCenter: ' + $item.attr('id') + '<br/>');
+            }
+        });
+
+    });
+
 ;(function ($) {
   'use strict';
 
@@ -528,14 +551,14 @@
     $(this).find('div.wwkt').on("mousemove", function(event){
       data.cox = event.pageX;
     });
-    $(this).find('div.wwkt').on("dragend", function(event){
+    $(this).find('div.wwkt').on("mouseup", function(event){
      
       if(data.mcox < data.cox)
       {
         data.currentDirection = 'backward';
         rotateCarousel(Math.abs(1));
       }
-      else
+      if(data.mcox > data.cox)
       {
         data.currentDirection = 'forward';
         rotateCarousel(Math.abs(1));
@@ -692,7 +715,7 @@
     imageNav:                   true,              // clicking a non-center image will rotate that image to the center
 
     // preloader
-    preloadImages:              true,  // disable/enable the image preloader. 
+    preloadImages:              false,  // disable/enable the image preloader. 
     forcedImageWidth:           152,     // specify width of all images; otherwise the carousel tries to calculate it
     forcedImageHeight:          206,     // specify height of all images; otherwise the carousel tries to calculate it
 
