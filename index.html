@@ -30,16 +30,7 @@
     });
     </script>
     <style type="text/css">
-    body {
-        font-family: Arial;
-        font-size: 12px;
-        background: #ededed;
-    }
-
-    .example-desc {
-        margin: 3px 0;
-        padding: 5px;
-    }
+    /*body { font-family: Arial; font-size: 12px; background: #ededed; }*/
 
     .ktrv {
         width: 960px;
@@ -48,14 +39,24 @@
         position: relative;
         clear: both;
         overflow: hidden;
-        background: #FFF;
+        background: #000;
     }
 
     .ktrv img {
       display: inline-block;
       width: 100%;
+      height: 100%;
+      opacity: 0;
     }
 
+    .ktrv>div.wwkt>div:nth-child(2) {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: inherit;
+        display: table;
+        background-color: #0a3b52;
+    }
     .ktrv>div.wwkt>div:last-child {
         position: absolute;
         top: 0;
@@ -79,27 +80,17 @@
         height: inherit;
         width: 100%;
         text-align: center;
+        color:black;
     }
 
-    .split-left {
-        width: 450px;
-        float: left;
-    }
-
-    .split-right {
-        width: 400px;
-        float: left;
-        margin-left: 10px;
-    }
+    
 
     #callback-output {
         height: 250px;
         overflow: scroll;
     }
 
-    textarea#newoptions {
-        width: 430px;
-    }
+    
 
     .ktrv>div.wwkt {
         display: inline-block;
@@ -114,26 +105,57 @@
     <div class="ktrv">
         <div class="wwkt" id="wwcp-1">
             <div>
-                <img src="images/1.jpg" />
+                <img src="images/card.jpg" />
             </div>
             <div>
                 <h2>1st div</h2>
             </div>
+            <div>
+                <img src="images/card.jpg" />
+            </div>
         </div>
         <div class="wwkt" id="wwcp-2">
             <div>
-                <img src="images/2.jpg" />
+                <img src="images/card.jpg" />
             </div>
             <div>
                 <h2>2nd div</h2>
             </div>
+            <div>
+                <img src="images/card.jpg" />
+            </div>
         </div>
         <div class="wwkt" id="wwcp-3">
             <div>
-                <img src="images/3.jpg" />
+                <img src="images/card.jpg" />
             </div>
             <div>
-                <h2><span>3rd div</span></h2>
+                <h2>3rd div</h2>
+            </div>
+            <div>
+                <img src="images/card.jpg" />
+            </div>
+        </div>
+        <div class="wwkt" id="wwcp-1">
+            <div>
+                <img src="images/card.jpg" />
+            </div>
+            <div>
+                <h2>1st div</h2>
+            </div>
+            <div>
+                <img src="images/card.jpg" />
+            </div>
+        </div>
+        <div class="wwkt" id="wwcp-1">
+            <div>
+                <img src="images/card.jpg" />
+            </div>
+            <div>
+                <h2>1st div</h2>
+            </div>
+            <div>
+                <img src="images/card.jpg" />
             </div>
         </div>
         <!--img src="images/4.jpg" id="wwcp-4" />
