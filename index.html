@@ -8,7 +8,7 @@
     <script type="text/javascript" src="js/jquery.waterwheelCarousel.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
-        var carousel = $("#carousel").waterwheelCarousel({
+        var ktrv = $(".ktrv").waterwheelCarousel({
             flankingItems: 3,
             movingToCenter: function($item) {
                 $('#callback-output').prepend('movingToCenter: ' + $item.attr('id') + '<br/>');
@@ -41,7 +41,7 @@
         padding: 5px;
     }
 
-    #carousel {
+    .ktrv {
         width: 960px;
         border: 1px solid #222;
         height: 300px;
@@ -51,19 +51,19 @@
         background: #FFF;
     }
 
-    #carousel img {
+    .ktrv img {
       display: inline-block;
       width: 100%;
     }
 
-    #carousel>div.slide>div:last-child {
+    .ktrv>div.wwkt>div:last-child {
         position: absolute;
         top: 0;
         width: 100%;
         height: inherit;
         display: table;
     }
-    #carousel > div.slide > div:first-child {
+    .ktrv > div.wwkt > div:first-child {
 
     display: table-cell;
     vertical-align: middle;
@@ -101,7 +101,7 @@
         width: 430px;
     }
 
-    #carousel>div.slide {
+    .ktrv>div.wwkt {
         display: inline-block;
         border: 1px solid #ccc;
         cursor: pointer;
@@ -111,8 +111,8 @@
 
 <body>
     <h1>Carousel Demo</h1>
-    <div id="carousel">
-        <div class="slide" id="wwcp-1">
+    <div class="ktrv">
+        <div class="wwkt" id="wwcp-1">
             <div>
                 <img src="images/1.jpg" />
             </div>
@@ -120,7 +120,7 @@
                 <h2>1st div</h2>
             </div>
         </div>
-        <div class="slide" id="wwcp-2">
+        <div class="wwkt" id="wwcp-2">
             <div>
                 <img src="images/2.jpg" />
             </div>
@@ -128,7 +128,7 @@
                 <h2>2nd div</h2>
             </div>
         </div>
-        <div class="slide" id="wwcp-3">
+        <div class="wwkt" id="wwcp-3">
             <div>
                 <img src="images/3.jpg" />
             </div>

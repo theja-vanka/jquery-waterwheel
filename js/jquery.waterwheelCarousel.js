@@ -32,7 +32,7 @@
     function initializeCarouselData() {
       data = {
         itemsContainer:         $(carousel),
-        totalItems:             $(carousel).find('div.slide').length,
+        totalItems:             $(carousel).find('div.wwkt').length,
         containerWidth:         $(carousel).width(),
         containerHeight:        $(carousel).height(),
         currentCenterItem:      null,
@@ -51,7 +51,7 @@
         cox: -1,
         mcox: 0 
       };
-      data.itemsContainer.find('div.slide').removeClass(options.activeClassName);
+      data.itemsContainer.find('div.wwkt').removeClass(options.activeClassName);
     }
 
     /**
@@ -88,7 +88,7 @@
         return;
       }
 
-      var $imageElements = data.itemsContainer.find('div.slide img'), loadedImages = 0, totalImages = $imageElements.length;
+      var $imageElements = data.itemsContainer.find('div.wwkt img'), loadedImages = 0, totalImages = $imageElements.length;
 
       $imageElements.each(function () {
         $(this).bind('load', function () {
@@ -117,7 +117,7 @@
      * original dimensions.
      */
     function setOriginalItemDimensions() {
-      data.itemsContainer.find('div.slide').each(function () {
+      data.itemsContainer.find('div.wwkt').each(function () {
         if ($(this).data('original_width') == undefined || options.forcedImageWidth > 0) {
           $(this).data('original_width', $(this).width());
         }
@@ -135,7 +135,7 @@
      */
     function forceImageDimensionsIfEnabled() {
       if (options.forcedImageWidth && options.forcedImageHeight) {
-        data.itemsContainer.find('div.slide').each(function () {
+        data.itemsContainer.find('div.wwkt').each(function () {
           $(this).width(options.forcedImageWidth);
           $(this).height(options.forcedImageHeight);
         });
@@ -149,7 +149,7 @@
      */
     function preCalculatePositionProperties() {
       // The 0 index is the center item in the carousel
-      var $firstItem = data.itemsContainer.find('div.slide:first');
+      var $firstItem = data.itemsContainer.find('div.wwkt:first');
 
       data.calculations[0] = {
         distance: 0,
@@ -194,7 +194,7 @@
      */
     function setupCarousel() {
       // Fill in a data array with jQuery objects of all the images
-      data.items = data.itemsContainer.find('div.slide');
+      data.items = data.itemsContainer.find('div.wwkt');
       for (var i = 0; i < data.totalItems; i++) {
         data.items[i] = $(data.items[i]);
       }
@@ -211,7 +211,7 @@
       // Default all the items to the center position
       data.itemsContainer
         .css('position','relative')
-        .find('div.slide')
+        .find('div.wwkt')
           .each(function () {
             // Figure out where the top and left positions for center should be
             var centerPosLeft, centerPosTop;
@@ -483,7 +483,7 @@
      * to get the clicked item to the center, or will fire the custom event
      * the user passed in if the center item is clicked
      */
-    $(this).find('div.slide').bind("click", function () {
+    $(this).find('div.wwkt').bind("click", function () {
       var itemPosition = $(this).data().currentPosition;
 
       if (options.imageNav == false) {
@@ -521,14 +521,14 @@
       }
     });
 
-    $(this).find('div.slide').on("mousedown", function(event){
+    $(this).find('div.wwkt').on("mousedown", function(event){
       data.mcox = event.pageX;
     });
 
-    $(this).find('div.slide').on("mousemove", function(event){
+    $(this).find('div.wwkt').on("mousemove", function(event){
       data.cox = event.pageX;
     });
-    $(this).find('div.slide').on("dragend", function(event){
+    $(this).find('div.wwkt').on("dragend", function(event){
      
       if(data.mcox < data.cox)
       {
@@ -549,7 +549,7 @@
      * make sure that they aren't active for certain situations
      */
     $(this).find('a').bind("click", function (event) {
-      var isCenter = $(this).find('div.slide').data('currentPosition') == 0;
+      var isCenter = $(this).find('div.wwkt').data('currentPosition') == 0;
       // should we disable the links?
       if (options.linkHandling === 1 || // turn off all links
           (options.linkHandling === 2 && !isCenter)) // turn off all links except center
@@ -635,7 +635,7 @@
       options = $.extend({}, $.fn.waterwheelCarousel.defaults, newOptions);
 
       initializeCarouselData();
-      data.itemsContainer.find('div.slide').hide();
+      data.itemsContainer.find('div.wwkt').hide();
       forceImageDimensionsIfEnabled();
 
       preload(function () {
