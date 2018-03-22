@@ -1,14 +1,14 @@
 /*!
  * Waterwheel Carousel
- * Version 2.3.0
- * http://www.bkosborne.com
+ * Version 3.0.0
  *
- * Copyright 2011-2013 Brian Osborne
+ * Copyright 2018 Krishnatheja Vanka
  * Dual licensed under GPLv3 or MIT
  * Copies of the licenses have been distributed
  * with this plugin.
  *
- * Plugin written by Brian Osborne
+ * Plugin written by Brian Osborne Version 2.3.0 (2011-2013)
+ * Modified by Krishnatheja Vanka Version 3.0.0 (2018)
  * for use with the jQuery JavaScript Framework
  * http://www.jquery.com
  */
@@ -671,8 +671,8 @@
     separationMultiplier:       0.6, // multipled by separation distance to increase/decrease distance for each additional item
     horizonOffset:              0,   // offset each item from the "horizon" by this amount (causes arching)
     horizonOffsetMultiplier:    1,   // multipled by horizon offset to increase/decrease offset for each additional item
-    sizeMultiplier:             0.7, // determines how drastically the size of each item changes
-    opacityMultiplier:          0.8, // determines how drastically the opacity of each item changes
+    sizeMultiplier:             0.8, // determines how drastically the size of each item changes
+    opacityMultiplier:          0.9, // determines how drastically the opacity of each item changes
     horizon:                    0,   // how "far in" the horizontal/vertical horizon should be set from the container wall. 0 for auto
     flankingItems:              3,   // the number of items visible on either side of the center                  
 
