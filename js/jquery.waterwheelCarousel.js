@@ -18,15 +18,6 @@
 $(document).ready(function() {
     var carousel = $(".ktrv").waterwheelCarousel({});
 });
-$(window).resize(function() {
-    setTimeout(
-        function() {
-            var carousel = $(".ktrv").waterwheelCarousel({});
-            console.log('a');
-        }, 1000);
-
-});
-
 ;
 (function($) {
     'use strict';
