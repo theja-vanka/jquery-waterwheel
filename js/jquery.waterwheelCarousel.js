@@ -1,24 +1,6 @@
-/*!
- * Waterwheel Carousel
- * Version 3.0.0
- *
- * Copyright 2018 Krishnatheja Vanka
- * Dual licensed under GPLv3 or MIT
- * Copies of the licenses have been distributed
- * with this plugin.
- *
- * Plugin written by Brian Osborne Version 2.3.0 (2011-2013)
- * Modified by Krishnatheja Vanka Version 3.0.0 (2018)
- * for use with the jQuery JavaScript Framework
- * http://www.jquery.com
- */
-
-
-
 $(document).ready(function() {
     var carousel = $(".ktrv").waterwheelCarousel({});
 });
-;
 (function($) {
     'use strict';
 
@@ -673,7 +655,7 @@ $(document).ready(function() {
 
     $.fn.waterwheelCarousel.defaults = {
         // number tweeks to change apperance
-        startingItem: 1, // item to place in the center of the carousel. Set to 0 for auto
+        startingItem: 0, // item to place in the center of the carousel. Set to 0 for auto
         separation: 100, // distance between items in carousel
         separationMultiplier: 0.6, // multipled by separation distance to increase/decrease distance for each additional item
         horizonOffset: 0, // offset each item from the "horizon" by this amount (causes arching)
@@ -681,7 +663,7 @@ $(document).ready(function() {
         sizeMultiplier: 0.8, // determines how drastically the size of each item changes
         opacityMultiplier: 0.9, // determines how drastically the opacity of each item changes
         horizon: 0, // how "far in" the horizontal/vertical horizon should be set from the container wall. 0 for auto
-        flankingItems: 3, // the number of items visible on either side of the center                  
+        flankingItems: 3, // the number of items visible on either side of the center
 
         // animation
         speed: 500, // speed in milliseconds it will take to rotate from one to the next
@@ -699,7 +681,7 @@ $(document).ready(function() {
         imageNav: true, // clicking a non-center image will rotate that image to the center
 
         // preloader
-        preloadImages: false, // disable/enable the image preloader. 
+        preloadImages: false, // disable/enable the image preloader.
         forcedImageWidth: 152, // specify width of all images; otherwise the carousel tries to calculate it
         forcedImageHeight: 206, // specify height of all images; otherwise the carousel tries to calculate it
 
